@@ -1,0 +1,80 @@
+---
+// Código Astro (Frontend)
+const navItems = [
+  { href: "#", label: "Inicio", icon: "🏠" },
+  { href: "#", label: "Sobre mi", icon: "👤" },
+  { href: "#", label: "Blog", icon: "📰" },
+  { href: "#", label: "TFG", icon: "🎓" },
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlexzDev | Desarrollador de Software</title>
+  </head>
+  <body class="bg-white font-sans antialiased text-gray-900">
+    
+    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex items-center justify-between">
+      <div class="text-3xl font-bold text-blue-600 tracking-tighter">AV</div>
+      
+      <nav class="hidden md:flex items-center gap-8">
+        {navItems.map(item => (
+          <a href={item.href} class="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-blue-600 transition">
+            <span>{item.icon}</span>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      
+      <div class="md:hidden text-2xl">☰</div>
+    </header>
+
+    <main>
+      <section class="flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-b from-white to-gray-50">
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900">
+          Hola, soy <span class="text-blue-600">AlexzDev</span>
+        </h1>
+        
+        <p class="text-2xl md:text-3xl font-medium text-gray-700 mt-6">
+          Desarrollador de Software
+        </p>
+        
+        <p class="text-lg text-gray-500 max-w-2xl mt-8 leading-relaxed">
+          Desarrollador con más de 5 años de experiencia en la creación de sistemas escalables y sincronizados. Recientemente apasionado por el desarrollo web.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-12">
+          <a href="#" class="bg-blue-600 text-white font-semibold px-10 py-4 rounded-full shadow-xl shadow-blue-500/20 hover:bg-blue-700 hover:-translate-y-1 transition all duration-300 w-full sm:w-auto">
+            Conóceme más
+          </a>
+          <a href="#" class="bg-white text-gray-700 border border-gray-200 font-medium px-10 py-4 rounded-full hover:bg-gray-50 transition w-full sm:w-auto">
+            <span class="italic text-gray-400 mr-1">day-to-day</span> de mi TFG
+          </a>
+        </div>
+      </section>
+
+      <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold text-gray-900 tracking-tight">Proyectos Destacados</h2>
+          <p class="text-gray-500 mt-4 text-lg">Una selección de mis trabajos más recientes</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            <div class="p-8 border border-dashed border-gray-300 rounded-3xl text-gray-400">
+              Próximamente: CloudMultiProxy...
+            </div>
+            <div class="p-8 border border-dashed border-gray-300 rounded-3xl text-gray-400">
+              Próximamente: CloudMotdRotary...
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-sm">
+      &copy; {new Date().getFullYear()} AlexzDev. Hecho con Astro.
+    </footer>
+
+  </body>
+</html>
